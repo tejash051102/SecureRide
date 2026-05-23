@@ -1,4 +1,4 @@
-import { BadgeCheck, BriefcaseBusiness, Car, ClipboardList, CreditCard, Gauge, UserCog, UserRound, Users, X } from "lucide-react";
+import { BadgeCheck, BriefcaseBusiness, Car, ClipboardList, CreditCard, Gauge, ShieldCheck, UserCog, UserRound, Users, X } from "lucide-react";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";

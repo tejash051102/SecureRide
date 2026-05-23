@@ -20,7 +20,7 @@ router.get("/", protect, async (req, res, next) => {
       User.countDocuments(customerFilter),
       req.user.role === "admin" ? Agent.countDocuments() : 0,
       req.user.role === "admin" ? Manager.countDocuments() : 0,
-      verificationRoles.length && (req.user.role === "admin" || req.user.isVerified) ? User.countDocuments({ isVerified: false, role: { $in: verificationRoles } }) : 0,
+      verificationRoles.length && (req.user.role === "admin" || req.user.isVerified) ? User.countDocuments({ isVerified: { $ne: true }, role: { $in: verificationRoles } }) : 0,
       Vehicle.countDocuments(filter),
       Policy.countDocuments(filter),
       Claim.countDocuments(filter),

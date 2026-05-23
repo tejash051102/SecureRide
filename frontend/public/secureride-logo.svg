@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="320" height="96" viewBox="0 0 320 96" fill="none">
-  <rect width="320" height="96" rx="24" fill="#0f172a"/>
-  <rect x="18" y="18" width="60" height="60" rx="16" fill="url(#paint0_linear)"/>
-  <path d="M48 23L68 31V46C68 60.2 59.6 70.1 48 76C36.4 70.1 28 60.2 28 46V31L48 23Z" fill="white"/>
-  <path d="M38 53C39.4 48.4 41.1 45 43.2 42.9H52.8C54.9 45 56.6 48.4 58 53" stroke="#0f766e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M34.5 53H61.5" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
-  <path d="M40 58H56" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="40" cy="53" r="2.8" fill="#0f766e"/>
-  <circle cx="56" cy="53" r="2.8" fill="#0f766e"/>
-  <path d="M44 66C46.8 63.8 49.2 63.8 52 66" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
-  <text x="94" y="45" fill="white" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="900">SecureRide</text>
-  <text x="96" y="65" fill="#a7f3d0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">Car Insurance Management</text>
-  <defs>
-    <linearGradient id="paint0_linear" x1="18" y1="18" x2="78" y2="78" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#14b8a6"/>
-      <stop offset="1" stop-color="#06b6d4"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" fill="none">
+  <rect width="640" height="640" fill="#ffffff"/>
+  <path d="M318 78C249 130 185 156 108 164V262C108 365 177 452 318 505C459 452 532 365 532 262V164C455 156 390 130 318 78Z" fill="#ffffff"/>
+  <path d="M314 78C244 128 182 154 108 164V262C108 327 135 386 187 431C197 420 208 411 220 404C178 367 156 321 156 262V200C214 190 266 168 314 136V78Z" fill="#071b33"/>
+  <path d="M330 78V136C378 168 430 190 488 200V262C488 318 468 362 430 398C435 422 448 442 469 459C512 410 532 345 532 262V164C458 154 397 128 330 78Z" fill="#1267bd"/>
+  <path d="M227 262C237 242 246 225 257 211C265 201 276 197 291 196C318 194 354 194 381 196C397 197 408 201 416 211C427 225 436 242 446 262H463C474 262 480 268 480 276C480 286 470 290 458 292C471 306 480 323 480 345V375C480 385 472 392 462 392H215C205 392 197 385 197 375V345C197 323 206 306 219 292C207 290 197 286 197 276C197 268 203 262 214 262H227Z" fill="#071b33"/>
+  <path d="M259 273C268 253 276 238 286 225C291 219 298 217 309 216C330 215 361 215 382 216C393 217 400 219 405 225C415 238 423 253 432 273H259Z" fill="#ffffff"/>
+  <path d="M225 316C226 300 231 296 245 302L279 315C287 318 286 328 277 331L242 338C229 341 224 332 225 316Z" fill="#ffffff"/>
+  <path d="M451 316C450 300 445 296 431 302L397 315C389 318 390 328 399 331L434 338C447 341 452 332 451 316Z" fill="#ffffff"/>
+  <path d="M285 363C289 348 296 341 309 341H367C380 341 387 348 391 363L399 382H277L285 363Z" fill="#ffffff"/>
+  <path d="M300 358H376L380 368H296L300 358Z" fill="#071b33"/>
+  <path d="M206 442C272 405 352 390 470 388C405 411 362 432 340 457C315 486 312 517 335 553C283 536 239 511 206 442Z" fill="#1267bd"/>
+  <path d="M291 429C322 418 355 411 391 407" stroke="#ffffff" stroke-width="11" stroke-linecap="round"/>
+  <path d="M258 455C272 446 285 439 299 434" stroke="#ffffff" stroke-width="13" stroke-linecap="round"/>
+  <path d="M232 491C242 478 252 467 264 458" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+  <path d="M207 531C216 518 224 506 232 496" stroke="#ffffff" stroke-width="15" stroke-linecap="round"/>
+  <text x="72" y="583" fill="#071b33" font-family="Arial Black, Arial, sans-serif" font-size="58" font-weight="900" letter-spacing="5">SECURE</text>
+  <text x="396" y="583" fill="#1267bd" font-family="Arial Black, Arial, sans-serif" font-size="58" font-weight="900" letter-spacing="5">RIDE</text>
+  <path d="M73 610H190" stroke="#071b33" stroke-width="5"/>
+  <path d="M454 610H570" stroke="#1267bd" stroke-width="5"/>
 </svg>

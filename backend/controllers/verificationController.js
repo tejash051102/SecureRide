@@ -21,7 +21,7 @@ export async function getPendingVerifications(req, res, next) {
 
     const search = req.query.search || "";
     const users = await User.find({
-      isVerified: false,
+      isVerified: { $ne: true },
       role: { $in: roles },
       $or: [
         { name: { $regex: search, $options: "i" } },
@@ -46,7 +46,7 @@ export async function verifyUser(req, res, next) {
     }
 
     const user = await User.findOneAndUpdate(
-      { _id: req.params.id, isVerified: false, role: { $in: roles } },
+      { _id: req.params.id, isVerified: { $ne: true }, role: { $in: roles } },
       { isVerified: true, verifiedBy: req.user._id, verifiedAt: new Date() },
       { new: true, runValidators: true }
     ).select("-password");

@@ -19,20 +19,21 @@ function sendAuth(res, user) {
 export async function registerUser(req, res, next) {
   try {
     const { name, email, password, role, phone, address } = req.body;
+    const normalizedEmail = email?.trim().toLowerCase();
 
-    if (!name || !email || !password) {
+    if (!name || !normalizedEmail || !password) {
       return res.status(400).json({ message: "Name, email, and password are required" });
     }
 
-    const exists = await User.findOne({ email });
+    const exists = await User.findOne({ email: normalizedEmail });
     if (exists) {
       return res.status(409).json({ message: "Email is already registered" });
     }
 
     const selectedRole = ["admin", "manager", "agent", "customer"].includes(role) ? role : "customer";
     const user = await User.create({
-      name,
-      email,
+      name: name.trim(),
+      email: normalizedEmail,
       password,
       role: selectedRole,
       phone,

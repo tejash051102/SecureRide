@@ -6,6 +6,7 @@ import { AuthShell } from "./Login.jsx";
 export default function Register() {
   const [form, setForm] = useState({ name: "", email: "", password: "", role: "customer", phone: "", address: "" });
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const { register } = useAuth();
   const navigate = useNavigate();
 
@@ -16,11 +17,14 @@ export default function Register() {
       setError("Password must be at least 6 characters");
       return;
     }
+    setLoading(true);
     try {
       await register(form);
       navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -40,7 +44,7 @@ export default function Register() {
         {form.role !== "admin" && <p className="text-xs text-slate-500">Your {form.role} account will be active after verification.</p>}
         <input className="form-field" placeholder="Phone" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
         <textarea className="form-field" placeholder="Address" rows="2" value={form.address} onChange={(e) => setForm({ ...form, address: e.target.value })} />
-        <button className="btn-primary w-full" type="submit">Register</button>
+        <button className="btn-primary w-full" type="submit" disabled={loading}>{loading ? "Creating account..." : "Register"}</button>
         <p className="text-center text-sm text-slate-500">
           Already registered? <Link className="font-semibold text-brand" to="/login">Login</Link>
         </p>

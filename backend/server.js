@@ -20,7 +20,21 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5175" }));
+const allowedOrigins = [
+  process.env.CLIENT_URL || "http://localhost:5175",
+  "http://localhost:5175",
+  "http://127.0.0.1:5175"
+];
+
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin) || /^http:\/\/192\.168\.\d{1,3}\.\d{1,3}:5175$/.test(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error(`CORS blocked origin: ${origin}`));
+  }
+}));
 app.use(express.json());
 
 app.get("/", (req, res) => {

@@ -1,7 +1,8 @@
-import { BadgeCheck, BriefcaseBusiness, Car, ClipboardList, CreditCard, Gauge, ShieldCheck, UserCog, UserRound, Users, X } from "lucide-react";
+import { BadgeCheck, BriefcaseBusiness, Car, ClipboardList, CreditCard, Gauge, UserCog, UserRound, Users, X } from "lucide-react";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
+import Logo from "./Logo.jsx";
 
 const navItems = [
   { to: "/dashboard", label: "Dashboard", icon: Gauge },
@@ -26,23 +27,16 @@ export default function Sidebar({ open, onClose }) {
   });
 
   return (
-    <aside className={`fixed inset-y-0 left-0 z-40 w-72 transform bg-ink text-white transition lg:static lg:translate-x-0 ${open ? "translate-x-0" : "-translate-x-full"}`}>
-      <div className="flex h-16 items-center justify-between border-b border-white/10 px-5">
-        <div className="flex items-center gap-3">
-          <div className="grid h-10 w-10 place-items-center rounded-md bg-brand">
-            <ShieldCheck size={22} />
-          </div>
-          <div>
-            <p className="text-lg font-bold">SecureRide</p>
-            <p className="text-xs text-slate-300">Insurance Manager</p>
-          </div>
-        </div>
+    <aside className={`fixed inset-y-0 left-0 z-40 w-72 transform bg-[#111827] text-white shadow-2xl shadow-slate-900/20 transition lg:static lg:translate-x-0 ${open ? "translate-x-0" : "-translate-x-full"}`}>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(20,184,166,0.24),transparent_18rem)]" />
+      <div className="relative flex h-20 items-center justify-between border-b border-white/10 px-5">
+        <Logo dark />
         <button className="lg:hidden" onClick={onClose} aria-label="Close menu">
           <X size={22} />
         </button>
       </div>
 
-      <nav className="space-y-1 px-3 py-5">
+      <nav className="relative space-y-1 px-3 py-5">
         {visibleItems.map((item) => {
           const Icon = item.icon;
           return (
@@ -51,8 +45,8 @@ export default function Sidebar({ open, onClose }) {
               to={item.to}
               onClick={onClose}
               className={({ isActive }) =>
-                `flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition ${isActive ? "bg-brand text-white" : "text-slate-300 hover:bg-white/10 hover:text-white"}`
-              }
+                  `flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-semibold transition ${isActive ? "bg-white text-ink shadow-lg shadow-slate-950/20" : "text-slate-300 hover:bg-white/10 hover:text-white"}`
+                }
             >
               <Icon size={18} />
               {item.label}
